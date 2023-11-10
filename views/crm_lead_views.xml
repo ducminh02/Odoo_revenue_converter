@@ -8,7 +8,7 @@
             <field name="type">tree</field>
             <field name="arch" type="xml">
                 <field name="planned_revenue" position="after">
-                    <field name="planned_revenue_viet" invisble="1"/>
+                    <field name="planned_revenue_viet" />
                 </field>
 
             </field>
