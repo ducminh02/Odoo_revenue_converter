@@ -8,10 +8,28 @@
             <field name="type">tree</field>
             <field name="arch" type="xml">
                 <field name="planned_revenue" position="after">
-                    <field name="planned_revenue_viet" />
+                    <field name="planned_revenue_viet" widget="monetary"/>
                 </field>
+                <field name="planned_revenue_viet" position="after">
+                    <field name="currency_id" />
+                </field>
+            </field>
 
+        </record>
+
+        <record id="odoo_revenue_converter_crm_lead_form_view" model="ir.ui.view">
+            <field name="name">odoo.revenue.converter.crm.lead.form.view</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_case_form_view_oppor" />
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <div class="oe_title" position="inside">
+                    <field name="planned_revenue_viet" widget="monetary"/>
+                    <field name="currency_id" />
+                </div>
             </field>
         </record>
+
+
     </data>
 </odoo>
