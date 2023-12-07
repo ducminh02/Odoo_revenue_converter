@@ -4,7 +4,6 @@ import datetime
 import logging
 
 BASE_URL = "http://api.exchangeratesapi.io/v1/"
-API_KEY = "d84f806e4738c9c256647db53c4c0de9"
 
 _logger = logging.getLogger(__name__)
 
@@ -16,7 +15,6 @@ class ResCurrency(models.Model):
         api_key = self.env['ir.config_parameter'].sudo().get_param("currency_realtime_ api")
         print(api_key)
         endpoint = f"latest?access_key={api_key}"
-        url = self.env['ir.config_parameter'].sudo().get_param("currency_realtime_url")
 
         url = BASE_URL + endpoint
         # Check if json_response is not None
